@@ -1,4 +1,4 @@
-package net.proselyte.springmvc.model;
+package MainPack.model;
 
 
 import javax.persistence.*;
@@ -10,7 +10,6 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int account;
-    //private int user_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -24,7 +23,7 @@ public class Account {
         this.account = account;
     }
 
-    public Account(int id, int account)  {
+    public Account(int id, int account) {
         this.id = id;
         this.account = account;
     }

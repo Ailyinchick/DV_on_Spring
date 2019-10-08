@@ -1,8 +1,8 @@
-package net.proselyte.springmvc.DAO;
+package MainPack.DAO;
 
-import net.proselyte.springmvc.model.Account;
-import net.proselyte.springmvc.model.User;
-import net.proselyte.springmvc.model.userWallet;
+import MainPack.model.User;
+import MainPack.model.Account;
+import MainPack.model.userWallet;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -55,8 +55,8 @@ public class DAOAccount implements DAOinterface {
     public User findRichest() {
         DAOAccount ac = new DAOAccount();
         ac.tableSummAcc();
+        User user = new User("Mike", "Vazovskiy");
 
-        User user = new User();
         int usid = 0;
         int acc = 0;
         try {
@@ -71,11 +71,14 @@ public class DAOAccount implements DAOinterface {
                 }
             }
             rs = st.executeQuery("SELECT * FROM user LEFT OUTER JOIN account ON user.id = account.user_id where user.id=" + usid);
+
             while (rs.next()) {
                 user.setId(rs.getInt(1));
                 user.setName(rs.getString(2));
                 user.setSurName(rs.getString(3));
+                user.addAccount(new Account(rs.getInt(4), rs.getInt(5)));
             }
+
         } catch (ClassNotFoundException ex1) {
             System.out.println("Class not found EX " + ex1.getMessage());
         } catch (SQLException ex2) {

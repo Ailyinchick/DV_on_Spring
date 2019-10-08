@@ -1,10 +1,10 @@
-package net.proselyte.springmvc.DAO;
+package MainPack.DAO;
 
-import net.proselyte.springmvc.model.Account;
-import net.proselyte.springmvc.model.User;
+import MainPack.model.Account;
+import MainPack.model.User;
+import MainPack.util.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import net.proselyte.springmvc.util.HibernateSessionFactoryUtil;
 
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class DAOuser implements DAOinterface {
         session.close();
     }
 
-    public User testUser(String name){
+    public User testUser(String name) {
         User user = new User();
         user.setName(name);
         return user;
@@ -48,6 +48,7 @@ public class DAOuser implements DAOinterface {
         List<User> users = (List<User>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
         return users;
     }
+
     @Override
     public List<Account> allAccounts() {
         return null;

@@ -5,11 +5,6 @@
     <title>Home Page</title>
 </head>
 <body>
-<form action="/myAction">
-    <input type="submit" value="Hello from spring">
-    <h1> ${attrib} </h1>
-</form>
-
 
 <form action="/findById">
     <input type="text" name="userID"/>

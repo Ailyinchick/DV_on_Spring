@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ProselyteSpringMVC.iml" filepath="$PROJECT_DIR$/ProselyteSpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DvForInq.iml" filepath="$PROJECT_DIR$/DvForInq.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package net.proselyte.springmvc.model;
+package MainPack.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class User {
 
     @Override
     public String toString() {
-        return this.name + " " + this.surName + " : " + this.accounts.toString() + " ";
+        return this.id + " " + this.name + " " + this.surName + " : " + this.accounts.toString() + " ";
     }
 
     public void setId(int id) {

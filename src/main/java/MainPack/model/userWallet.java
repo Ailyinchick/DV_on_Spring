@@ -1,4 +1,4 @@
-package net.proselyte.springmvc.model;
+package MainPack.model;
 
 
 import java.util.Objects;

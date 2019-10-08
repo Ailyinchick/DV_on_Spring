@@ -1,7 +1,7 @@
-package net.proselyte.springmvc.util;
+package MainPack.util;
 
-import net.proselyte.springmvc.model.Account;
-import net.proselyte.springmvc.model.User;
+import MainPack.model.User;
+import MainPack.model.Account;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -9,7 +9,8 @@ import org.hibernate.cfg.Configuration;
 public class HibernateSessionFactoryUtil {
     private static SessionFactory sessionFactory;
 
-    private HibernateSessionFactoryUtil() {}
+    private HibernateSessionFactoryUtil() {
+    }
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {

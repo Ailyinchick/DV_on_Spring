@@ -1,11 +1,10 @@
-package net.proselyte.springmvc.DAO;
+package MainPack.DAO;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 public class DAOAccountTest {
     DAOAccount ac = new DAOAccount();
-
     @Test
     public void allAccounts() {
         Assert.assertEquals(11, ac.allAccounts().size());
