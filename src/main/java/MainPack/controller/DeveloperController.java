@@ -33,9 +33,9 @@ public class DeveloperController {
         return "index";
     }
 
-    @GetMapping(value = "findById")
-    public String findById(ModelMap model) {
-
+    @PostMapping
+    public String findById(@RequestParam String id, ModelMap model) {
+        model.addAttribute("userById", ms.findById(id));
         return "index";
     }
 

@@ -18,13 +18,6 @@ public class DAOuserTest {
         Assert.assertEquals("Akim", us.foundByID(3).getName());
     }
 
-
-    @Test
-    public void testUser() {
-        System.out.println(us.testUser("Mike").getName());
-    }
-
-
     @Test
     public void findRichest() {
         System.out.println(ms.showRichest());

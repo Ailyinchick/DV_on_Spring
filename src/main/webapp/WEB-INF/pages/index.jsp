@@ -6,8 +6,8 @@
 </head>
 <body>
 
-<form action="/findById">
-    <input type="text" name="userID"/>
+<form action="/findById" method="post">
+    <input type="text" name="id" width="50"/>
     <input type="submit" value="Find by ID">
     <h1> ${userById} </h1>
 </form>
@@ -19,7 +19,8 @@
 
 <form action="/findAll">
     <input type="submit" value="Display all">
-    <h1> ${allUsers} </h1>
+    <div> ${allUsers} </div>
+
 </form>
 
 <form action="/bankSumm">

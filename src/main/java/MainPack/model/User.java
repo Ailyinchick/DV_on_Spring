@@ -64,4 +64,8 @@ public class User {
     public void removeAccount(Account account) {
         accounts.remove(account);
     }
+
+    public List<Account> getAccounts() {
+        return accounts;
+    }
 }

@@ -28,4 +28,18 @@ public class MyService {
         out += da.totalBank();
         return out;
     }
+
+    public String findById(String id) {
+        try {
+            int outID = Integer.parseInt(id);
+            return du.foundByID(outID).toString();
+        } catch (ArithmeticException ex) {
+            System.out.println("Эксептиона арифметик каст то инт : \n" + ex.getMessage());
+        }
+        return null;
+    }
+
+    public List listAll() {
+        return du.findAll();
+    }
 }

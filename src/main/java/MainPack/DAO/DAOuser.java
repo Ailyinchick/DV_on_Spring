@@ -38,12 +38,6 @@ public class DAOuser implements DAOinterface {
         session.close();
     }
 
-    public User testUser(String name) {
-        User user = new User();
-        user.setName(name);
-        return user;
-    }
-
     public List<User> findAll() {
         List<User> users = (List<User>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
         return users;

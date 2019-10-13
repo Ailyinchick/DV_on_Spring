@@ -3,6 +3,7 @@ package MainPack.DAO;
 import MainPack.model.User;
 import MainPack.model.Account;
 import MainPack.model.userWallet;
+import MainPack.util.HibernateSessionFactoryUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -88,43 +89,19 @@ public class DAOAccount implements DAOinterface {
     }
 
     public String totalBank() {
-        int summ = 0;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbfordv", "root", "123qwe");
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM account");
-            while (rs.next()) {
-                summ += rs.getInt(2);
-            }
-        } catch (ClassNotFoundException ex1) {
-            System.out.println("Class not found EX " + ex1.getMessage());
-        } catch (SQLException ex2) {
-            System.out.println("SQL EX " + ex2.getMessage());
+
+        List<Account> accounts = (List<Account>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Account").list();
+        int summ=0;
+        for(int i=0; i<accounts.size(); i++) {
+            summ+=accounts.get(i).getAccount();
         }
         return "" + summ;
     }
 
     @Override
     public List<Account> allAccounts() {
-        List outList = new ArrayList();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbfordv", "root", "123qwe");
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from account");
-            while (rs.next()) {
-                outList.add(new Account(rs.getInt(1), rs.getInt(2)));
-            }
-            rs.close();
-            st.close();
-            con.close();
-            return outList;
-        } catch (ClassNotFoundException ex1) {
-            System.out.println("classnotFound EX " + ex1.getMessage());
-        } catch (SQLException ex2) {
-            System.out.println("SQL EX " + ex2.getMessage());
-        }
-        return outList;
+
+        List<Account> accounts = (List<Account>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Account").list();
+        return accounts;
     }
 }
