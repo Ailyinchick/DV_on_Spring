@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="mysql-8.0.17-winx64-debug-test">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../mysql-8.0.17-winx64-debug-test.zip!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

@@ -2,12 +2,20 @@ package MainPack.service;
 
 import MainPack.DAO.*;
 import MainPack.model.User;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
 public class MyService {
+
     DAOAccount da = new DAOAccount();
     DAOuser du = new DAOuser();
+
+    @Bean
+    public MyService ms() {
+        return new MyService();
+    }
 
     public String displayAll() {
         String output = "";
@@ -19,14 +27,12 @@ public class MyService {
     }
 
     public String showRichest() {
-        String out = da.findRichest().toString();
+        String out = da.findRichest();
         return out;
     }
 
     public String bankSumm() {
-        String out = "";
-        out += da.totalBank();
-        return out;
+        return da.totalBank();
     }
 
     public String findById(String id) {
@@ -39,7 +45,4 @@ public class MyService {
         return null;
     }
 
-    public List listAll() {
-        return du.findAll();
-    }
 }

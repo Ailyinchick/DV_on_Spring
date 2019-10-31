@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<h1 align="center">Welcome to home page</h1>
+
 <form action="/findById" method="post">
     <input type="text" name="id" width="50"/>
     <input type="submit" value="Find by ID">
