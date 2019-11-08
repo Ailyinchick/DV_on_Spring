@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: Ahriets
+Build-Jdk: 12.0.2
+Implementation-Version: 2.1.6.RELEASE
+Implementation-Vendor-Id: Ahriets
+Main-Class: ${start-class}
+

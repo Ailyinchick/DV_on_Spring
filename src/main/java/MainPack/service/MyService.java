@@ -2,7 +2,7 @@ package MainPack.service;
 
 import MainPack.DAO.*;
 import MainPack.model.User;
-import org.powermock.core.classloader.annotations.PrepareForTest;
+
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
@@ -11,11 +11,6 @@ public class MyService {
 
     DAOAccount da = new DAOAccount();
     DAOuser du = new DAOuser();
-
-    @Bean
-    public MyService ms() {
-        return new MyService();
-    }
 
     public String displayAll() {
         String output = "";

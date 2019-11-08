@@ -22,7 +22,7 @@ public class DAOAccount implements DAOinterface {
     public String findRichest() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbfordv", "root", "123qwe");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fordv", "root", "123qwe");
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("call findRichest()");
             while (rs.next()) {

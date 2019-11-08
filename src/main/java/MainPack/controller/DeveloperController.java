@@ -1,9 +1,6 @@
 package MainPack.controller;
 
 import MainPack.service.MyService;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
@@ -11,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @Service
 @Controller
-
 public class DeveloperController {
 
     MyService ms = new MyService();
