@@ -4,10 +4,17 @@ import MainPack.DAO.*;
 import MainPack.model.User;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MyService {
+
+    @Bean
+    public MyService getMyService() {
+        return new MyService();
+    }
 
     DAOAccount da = new DAOAccount();
     DAOuser du = new DAOuser();

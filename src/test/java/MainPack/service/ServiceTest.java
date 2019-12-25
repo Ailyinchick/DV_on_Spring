@@ -21,7 +21,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {DeveloperController.class, MyService.class, Application.class})
 @AutoConfigureMockMvc
-
 public class ServiceTest {
 
     @Autowired
@@ -57,7 +56,6 @@ public class ServiceTest {
                         andExpect(view().name("index")).andExpect(model().
                         attribute("bankSumm", containsString(ms.bankSumm())))
         );
-
     }
 
     @Test

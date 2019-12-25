@@ -41,4 +41,9 @@ public class DeveloperController {
         return "index";
     }
 
+    @GetMapping(value = "/showCar")
+    public String car() {
+        return "/WEB-INF/pages/jiga.png";
+    }
+
 }
